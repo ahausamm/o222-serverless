@@ -4,7 +4,7 @@ o222 Workshop - serverless computing
 Imageresize - Lambdafunction
 -------
 
-This function automatically resizes an image from the source bucket. After resizing the function upload the smaller image bucket with  "-resized" at the end.
+This function automatically resizes an image from the source bucket. After resizing the function uploads the smaller image in the bucket with  "-resized" at the end.
 
 S3
 -------
