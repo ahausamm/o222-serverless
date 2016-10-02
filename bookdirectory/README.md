@@ -6,33 +6,50 @@ Imageresize - Lambdafunction
 
 This function automatically resizes an image from the source bucket. After resizing the function uploads the smaller image in the bucket with  "-resized" at the end.
 
-S3
+DynamoDB
 -------
 
-1. Create a bucket
-2. Create a bucket with the same name and "-resized" at the end
+1. Create a Table Books -> Primary Key: Id (Number) -> No sort key
+2. Import data using the Books.json from sampledata -> aws dynamodb batch-write-item --request-items file://[Path to repository]/bookdirectory/sampledata/Books.json 
+
 
 IAM
 -------
 
 *Role Name*
-* o222-imageresize
+* o222-bookdirectory
 
 *Role Type*
-* AWS Lambda
+* API Gateway
 
 *Attach Policy*
-* AWSLambdaExecute
+* none
 
-Lambda
+*Inline Policy*
+* Service: Amazon DynamoDB
+* Actions: Scan
+* ARN: See in your DynamoDB Config
+* Policyname: dynamodb-query
+
+API Gateway
 -------
 
-1. Create function
-2. Skip blueprint
-3. Add Trigger -> S3 -> Select your bucket -> Event "Object created (all)" -> enable trigger
-4. Function name: o222-imageresize
-5. Upload zipped code
-6. Role: Choose existing role -> o222-imageresize
-7. Timeout: 10s
-8. Create Function
+1. Create API
+2. API name: o222-bookdirectory
+3. Create method: GET
+4. Integration type: AWS Service
+5. AWS region: your region
+6. AWS service: DynamoDB
+7. HTTP method: POST (this is not the http method of the api, it's how api gateway communicate with DynamoDB) 
+8. Action: Scan
+9. Execution role: ARN of o222-bookdirectory - Role
+10. Body Mapping Templates: Add mapping template -> application/json -> yes
+`{
+    "TableName": "Books"
+}`
+11. Test
+12. Actions -> Deploy API
+13. Choose new stage -> prod
+14. Deploy
+15. Copy Invoke URL in your browser
 

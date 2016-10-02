@@ -1,0 +1,103 @@
+{
+    "Books": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "Id": {
+                        "N": "101"
+                    },
+                    "Title": {
+                        "S": "Book 101 Title"
+                    },
+                    "ISBN": {
+                        "S": "111-1111111111"
+                    },
+                    "Authors": {
+                        "L": [
+                            {
+                                "S": "Author1"
+                            }
+                        ]
+                    },
+                    "Price": {
+                        "N": "2"
+                    },
+                    "Dimensions": {
+                        "S": "8.5 x 11.0 x 0.5"
+                    },
+                    "PageCount": {
+                        "N": "500"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "Id": {
+                        "N": "102"
+                    },
+                    "Title": {
+                        "S": "Book 102 Title"
+                    },
+                    "ISBN": {
+                        "S": "222-2222222222"
+                    },
+                    "Authors": {
+                        "L": [
+                            {
+                                "S": "Author1"
+                            },
+                            {
+                                "S": "Author2"
+                            }
+                        ]
+                    },
+                    "Price": {
+                        "N": "20"
+                    },
+                    "Dimensions": {
+                        "S": "8.5 x 11.0 x 0.8"
+                    },
+                    "PageCount": {
+                        "N": "600"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "Id": {
+                        "N": "103"
+                    },
+                    "Title": {
+                        "S": "Book 103 Title"
+                    },
+                    "ISBN": {
+                        "S": "333-3333333333"
+                    },
+                    "Authors": {
+                        "L": [
+                            {
+                                "S": "Author1"
+                            },
+                            {
+                                "S": "Author2"
+                            }
+                        ]
+                    },
+                    "Price": {
+                        "N": "2000"
+                    },
+                    "Dimensions": {
+                        "S": "8.5 x 11.0 x 1.5"
+                    },
+                    "PageCount": {
+                        "N": "250"
+                    }
+                }
+            }
+        }
+    ]
+}
