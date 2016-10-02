@@ -10,7 +10,7 @@ DynamoDB
 -------
 
 1. Create a Table Books -> Primary Key: Id (Number) -> No sort key
-2. Import data using the Books.json from sampledata -> aws dynamodb batch-write-item --request-items file://[Path to repository]/bookdirectory/sampledata/Books.json 
+2. Import data using the Books.json from sampledata -> `aws dynamodb batch-write-item --request-items file://[Path to repository]/bookdirectory/sampledata/Books.json`
 
 
 IAM
@@ -43,13 +43,9 @@ API Gateway
 7. HTTP method: POST (this is not the http method of the api, it's how api gateway communicate with DynamoDB) 
 8. Action: Scan
 9. Execution role: ARN of o222-bookdirectory - Role
-10. Body Mapping Templates: Add mapping template -> application/json -> yes
-`{
-    "TableName": "Books"
-}`
-11. Test
-12. Actions -> Deploy API
-13. Choose new stage -> prod
-14. Deploy
-15. Copy Invoke URL in your browser
+10. Body Mapping Templates: Add mapping template -> application/json -> yes -> Code:  `{ "TableName": "Books" }`
+11. Actions -> Deploy API
+12. Choose new stage -> prod
+13. Deploy
+14. Copy Invoke URL in your browser
 
