@@ -4,7 +4,7 @@ o222 Workshop - serverless computing
 Bookdirectory
 -------
 
-This configurations gives you a simple API with some democontent.
+This configuration gives you a simple API with some democontent.
 
 DynamoDB
 -------
