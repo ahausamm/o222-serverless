@@ -1,10 +1,10 @@
 o222 Workshop - serverless computing
 =============
 
-Imageresize - Lambdafunction
+Bookdirectory
 -------
 
-This function automatically resizes an image from the source bucket. After resizing the function uploads the smaller image in the bucket with  "-resized" at the end.
+This configurations gives you a simple API with some democontent.
 
 DynamoDB
 -------
